@@ -1,9 +1,17 @@
 {
   "name": "qr-code-scanner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
   "main": "scanner.js",
-  "keywords": ["qrcode", "qr-code", "scanner", "reader", "decoder", "camera", "video"],
+  "keywords": [
+    "qrcode",
+    "qr-code",
+    "scanner",
+    "reader",
+    "decoder",
+    "camera",
+    "video"
+  ],
   "scripts": {},
   "author": "Felipe Nascimento Moura <felipenmoura@gmail.com> (http://felipenmoura.com/)",
   "license": "MIT"
