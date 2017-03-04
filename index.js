@@ -1,3 +1,4 @@
-const QRScanner = let require('./scripts/scanner.js')
-
-export default QRScanner
+const QRScanner = require('./scripts/scanner.js')
+console.log(typeof QRScanner)
+//export default QRScanner
+module.exports = QRScanner
