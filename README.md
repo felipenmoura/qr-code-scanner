@@ -17,7 +17,7 @@ You can use a regex to match only what you expect, ensuring the result will not 
 You can require it, or use it as global:
 
 ```js
-    const QRScanner = require('QRScanner');
+    require(['qr-code-scanner'], function (QRScanner) {...})
     // OR
     window.QRScanner
 ```
