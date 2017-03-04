@@ -1,0 +1,118 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/Users/felipenmoura/.node/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@4.1.2
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Library/WebServer/Documents/www/qr-code-scanner',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/felipenmoura/.npm correctMkdir not in flight; initializing
+10 info lifecycle qr-code-scanner@1.0.3~prepublish: qr-code-scanner@1.0.3
+11 silly lifecycle qr-code-scanner@1.0.3~prepublish: no script for prepublish, continuing
+12 info lifecycle qr-code-scanner@1.0.3~prepare: qr-code-scanner@1.0.3
+13 silly lifecycle qr-code-scanner@1.0.3~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package.tgz',
+14 verbose tar pack   '/Library/WebServer/Documents/www/qr-code-scanner' ]
+15 verbose tarball /Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package.tgz
+16 verbose folder /Library/WebServer/Documents/www/qr-code-scanner
+17 verbose addLocalTarball adding from inside cache /Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package.tgz
+18 verbose correctMkdir /Users/felipenmoura/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd qr-code-scanner@1.0.3
+20 verbose afterAdd /Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package/package.json not in flight; writing
+21 verbose correctMkdir /Users/felipenmoura/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package/package.json written
+23 silly publish { name: 'qr-code-scanner',
+23 silly publish   version: '1.0.3',
+23 silly publish   description: 'A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.',
+23 silly publish   main: 'index.js',
+23 silly publish   keywords:
+23 silly publish    [ 'qrcode',
+23 silly publish      'qr-code',
+23 silly publish      'scanner',
+23 silly publish      'reader',
+23 silly publish      'decoder',
+23 silly publish      'camera',
+23 silly publish      'video' ],
+23 silly publish   scripts: {},
+23 silly publish   author:
+23 silly publish    { name: 'Felipe Nascimento Moura',
+23 silly publish      email: 'felipenmoura@gmail.com',
+23 silly publish      url: 'http://felipenmoura.com/' },
+23 silly publish   license: 'MIT',
+23 silly publish   readme: '## QRCodeScanner\n\nThis is a SIMPLE qr-code-scanner that will allow you to open the user\'s camera, scan it and match a pattern or read the string out of the QR Code.\n\nIt is highly customizable for you to use it within your page\'s styles.\n\n### How it works\n\nUser will click a button, you will trigger the initiate method and a modal will open requesting permission to use the camera (only the first time).  \nThe user will see the camera\'s output.  \nWhen a QRCode is found, it will trigger your _onResult_ method and close the modal.  \nYou can customize the modal and its layer.  \nYou can use a regex to match only what you expect, ensuring the result will not be garbage.\n\n### How to use it:\n\nYou can require it, or use it as global:\n\n```js\n    const QRScanner = require(\'QRScanner\');\n    // OR\n    window.QRScanner\n```\n\n* The global _QRScanner_ will only be created IF there is not require/define available in the page.\n\n### API\n\nYou will call the `initiate` method, sending the options, like so:\n\n```js\n    QRScanner.initiate({\n        match: /^[a-zA-Z0-9]{16,18}$/, // optional\n        onResult: function (result) { console.info(\'DONE: \', result); },\n        onError: function (err) { console.error(\'ERR :::: \', err); }, // optional\n        onTimeout: function () { console.warn(\'TIMEDOUT\'); } // optional\n    })\n```\n\n#### Options\n\nIn the options object, you can send:\n\n- onResult: A function to be triggered when a result is matched\n- onError: A function to be called in case of an error (or device not supported) [optional]\n- onTimeout: Your callback for the timeout event [optional]\n- match: A regular Expression matching what you expect to find in the QRCode (if found something but it does not match what you expected, it will not trigger the onResult) [optional]\n- timeout: A number in ms specifying for how long you will wait for a match. Default: 20000 [optional]\n- parent: The container where the video(from the camera) should be appended to. Default: document.body [optional]\n- lockLayerParent: The container on which the _lock-layer_ will be appended. Default: document.body [optional]\n- className: A CSS class added to the video container. Default: QRScanner-container [optional]\n- lockLayerClassName: A CSS class added to the lockLayer container. Default: QRScanner-lock-layer [optional]\n\n* LockLayer is the darker layer behind the video.\n\n### Legacy\n\nThis lib uses some ES6 features like _let, const_ and _arrow functions_, but inherits the reader from Lazar Laszlo\'s port of ZXing Java library.\nThis project "cleans" some things like global variables and hardcoded ids from the previous projects, fixing some legacy problems.\n\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: '6ea2ed931cdff0a083203c45d56c6c6d4f62dfc5',
+23 silly publish   _id: 'qr-code-scanner@1.0.3',
+23 silly publish   _shasum: 'b5daab8c39439438217b9f31a3e574da5b13c275',
+23 silly publish   _from: '.' }
+24 info lifecycle qr-code-scanner@1.0.3~prepublishOnly: qr-code-scanner@1.0.3
+25 silly lifecycle qr-code-scanner@1.0.3~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name qr-code-scanner
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'qr-code-scanner',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'qr-code-scanner',
+30 silly mapToRegistry   name: 'qr-code-scanner',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/qr-code-scanner
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /Users/felipenmoura/.npm/qr-code-scanner/1.0.3/package.tgz
+34 verbose request uri https://registry.npmjs.org/qr-code-scanner
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 5:01:49 PM
+37 verbose request using bearer token for auth
+38 verbose request id 5122b599417bd668
+39 http request PUT https://registry.npmjs.org/qr-code-scanner
+40 http 403 https://registry.npmjs.org/qr-code-scanner
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '95',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Sat, 04 Mar 2017 20:01:51 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-gru7121-GRU',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1488657710.257348,VS0,VE1112',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating /Users/felipenmoura/.npm/registry.npmjs.org/qr-code-scanner on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 1.0.3." : qr-code-scanner
+44 verbose stack     at makeError (/Users/felipenmoura/.node/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/Users/felipenmoura/.node/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:292:14)
+44 verbose stack     at Request._callback (/Users/felipenmoura/.node/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
+44 verbose stack     at Request.self.callback (/Users/felipenmoura/.node/lib/node_modules/npm/node_modules/request/request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:191:7)
+44 verbose stack     at Request.<anonymous> (/Users/felipenmoura/.node/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:188:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/Users/felipenmoura/.node/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid qr-code-scanner
+47 verbose cwd /Library/WebServer/Documents/www/qr-code-scanner
+48 error Darwin 16.4.0
+49 error argv "/usr/local/bin/node" "/Users/felipenmoura/.node/bin/npm" "publish"
+50 error node v6.9.1
+51 error npm  v4.1.2
+52 error code E403
+53 error "You cannot publish over the previously published version 1.0.3." : qr-code-scanner
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]

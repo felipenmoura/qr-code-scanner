@@ -1,0 +1,14 @@
+{
+  "name": "tests",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Nascimento Moura <felipenmoura@gmail.com> (http://felipenmoura.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "qr-code-scanner": "^1.0.3"
+  }
+}
