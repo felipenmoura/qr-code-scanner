@@ -33,12 +33,7 @@ You will call the `initiate` method, sending the options, like so:
         match: /^[a-zA-Z0-9]{16,18}$/, // optional
         onResult: function (result) { console.info('DONE: ', result); },
         onError: function (err) { console.error('ERR :::: ', err); }, // optional
-        onTimeout: function () { console.warn('TIMEDOUT'); }, // optional
-        timeout: 20000, // optional (default is 20s)
-        parent: document.body, // optional, (default is body)
-        lockLayerParent: document.body, // optional, (default is body)
-        lockLayerClassName: 'QRScanner-lock-layer',
-        className: 'QRScanner-container'
+        onTimeout: function () { console.warn('TIMEDOUT'); } // optional
     })
 ```
 
