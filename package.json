@@ -1,8 +1,8 @@
 {
   "name": "qr-code-scanner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
-  "main": "scanner.js",
+  "main": "index.js",
   "keywords": [
     "qrcode",
     "qr-code",
