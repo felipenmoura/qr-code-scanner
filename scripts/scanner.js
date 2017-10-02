@@ -101,9 +101,9 @@
 
     MODULE.initiate = function (opts) {
         let options = opts || {}
-        options.onResult = function (result) { console.info('RESULT ::: ', result); },
-        options.onError = function (err) { console.error('ERR :::: ', err); },
-        options.onTimeout = function () { console.warn('TIMEDOUT'); }
+        options.onResult = opts.onResult || function (result) { console.info('RESULT ::: ', result); },
+        options.onError = opts.onError || function (err) { console.error('ERR :::: ', err); },
+        options.onTimeout = opts.onTimeout ||  function () { console.warn('TIMEDOUT'); }
 
         if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
             options.onError('Media Devices is not supported!')
