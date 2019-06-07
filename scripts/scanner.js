@@ -1,7 +1,9 @@
-
 (function(root, factory) {
     if (typeof define === "function" && define.amd) {
         define("qr-code-scanner", [], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
     } else {
         root.QRScanner = root['qr-code-scanner'] = factory();
     }
