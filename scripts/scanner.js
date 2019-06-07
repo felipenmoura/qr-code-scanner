@@ -163,7 +163,7 @@
 
         if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-                WebQR.video.src = window.URL.createObjectURL(stream);
+                WebQR.video.srcObject = stream; // window.URL.createObjectURL(stream);
                 WebQR.video.play();
                 WebQR.stream = stream
                 WebQR.timer = window.setInterval(function () {
