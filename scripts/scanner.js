@@ -143,7 +143,7 @@
             WebQR.ctx = WebQR.canvas.getContext('2d')
 
             WebQR.draw = function (image) {
-                WebQR.ctx.drawImage(image, 0, 0, 240, 200); 
+                WebQR.ctx.drawImage(image, 0, 0, 240, 200);
             }
 
             WebQR.qrcode.callback = function (result) {
@@ -181,6 +181,10 @@
                     options.onTimeout()
                     close(false)
                 }, options.timeout || 20000)
+            }).catch(e =>{
+                // remove the canvas
+                close(false);
+                options.onError(e);
             });
         }
     }
