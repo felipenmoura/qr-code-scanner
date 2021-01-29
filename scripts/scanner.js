@@ -120,7 +120,9 @@
             }
             window.clearInterval(WebQR.timer)
             window.clearTimeout(WebQR.timeOut)
-            WebQR.stream.getTracks()[0].stop()
+            if(WebQR.stream){
+                WebQR.stream.getTracks()[0].stop();
+            }
             WebQR.container.style.display = 'none'
             WebQR.lockLayer.style.display = 'none'
             WebQR.ctx.clearRect(0, 0, 240, 200)
