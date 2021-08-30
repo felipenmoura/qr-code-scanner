@@ -1,9 +1,9 @@
 {
   "name": "qr-code-scanner",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
   "main": "index.js",
-  "repository": "https://github.com/felipenmoura/qr-code-scanner/",
+  "repository": "https://github.com/J-Gann/qr-code-scanner",
   "keywords": [
     "qrcode",
     "qr-code",
