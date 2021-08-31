@@ -3072,9 +3072,9 @@
     lockLayer.className = "QRScanner-lock-layer " + options.lockLayerClassName;
     container.className = "QRScanner-container " + options.className;
     let innerHTML =
-      '<canvas id="QRScanner-canvasEl" width="640" height="600"></canvas>';
+      '<canvas id="QRScanner-canvasEl" width="640px" height="600px"></canvas>';
     innerHTML +=
-      '<video id="QRScanner-videoEl" style="display: none;" width="600" height="600"></video>';
+      '<video id="QRScanner-videoEl" style="display: none;" width="600px" height="600px"></video>';
     container.innerHTML = innerHTML;
     lockLayer.innerHTML = ".......";
 
@@ -3154,7 +3154,7 @@
       WebQR.stream.getTracks()[0].stop();
       WebQR.container.style.display = "none";
       WebQR.lockLayer.style.display = "none";
-      WebQR.ctx.clearRect(0, 0, 240, 200);
+      WebQR.ctx.clearRect(0, 0, 640, 600);
 
       if (result === false) {
         return;
@@ -3174,7 +3174,7 @@
       WebQR.ctx = WebQR.canvas.getContext("2d");
 
       WebQR.draw = function (image) {
-        WebQR.ctx.drawImage(image, 0, 0, 240, 200);
+        WebQR.ctx.drawImage(image, 0, 0, 640, 600);
       };
 
       WebQR.qrcode.callback = function (result) {
