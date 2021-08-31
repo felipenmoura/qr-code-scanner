@@ -3072,9 +3072,9 @@
     lockLayer.className = "QRScanner-lock-layer " + options.lockLayerClassName;
     container.className = "QRScanner-container " + options.className;
     let innerHTML =
-      '<canvas id="QRScanner-canvasEl" width="240" height="200"></canvas>';
+      '<canvas id="QRScanner-canvasEl" width="640" height="600"></canvas>';
     innerHTML +=
-      '<video id="QRScanner-videoEl" style="display: none;" width="200" height="200"></video>';
+      '<video id="QRScanner-videoEl" style="display: none;" width="600" height="600"></video>';
     container.innerHTML = innerHTML;
     lockLayer.innerHTML = ".......";
 
@@ -3086,8 +3086,8 @@
             right: 0;
             bottom: 0;
             box-sizing: border-box;
-            width: 260px;
-            height: 220px;
+            width: 660px;
+            height: 620px;
             z-index: 999999999;
             margin: auto;
             padding: 10px;
