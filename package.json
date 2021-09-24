@@ -1,9 +1,14 @@
 {
-  "name": "qr-code-scanner",
-  "version": "1.0.17",
+  "name": "@jss/qr-code-scanner",
+  "version": "1.0.18",
   "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
   "main": "index.js",
-  "repository": "https://github.com/J-Gann/qr-code-scanner",
+  "files": [
+    "index.js",
+    "index.html",
+    "scripts/scanner.js"
+  ],
+  "repository": "https://github.com/js-soft/qr-code-scanner",
   "keywords": [
     "qrcode",
     "qr-code",
@@ -15,5 +20,8 @@
   ],
   "scripts": {},
   "author": "Felipe Nascimento Moura <felipenmoura@gmail.com> (http://felipenmoura.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://nexus.js-soft.com/repository/npm-private/"
+  }
 }
