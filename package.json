@@ -8,7 +8,7 @@
     "index.html",
     "scripts/scanner.js"
   ],
-  "repository": "https://github.com/js-soft/qr-code-scanner",
+  "repository": "github.com:js-soft/qr-code-scanner",
   "keywords": [
     "qrcode",
     "qr-code",
@@ -19,7 +19,7 @@
     "video"
   ],
   "scripts": {},
-  "author": "Felipe Nascimento Moura <felipenmoura@gmail.com> (http://felipenmoura.com/)",
+  "author": "j&s-soft GmbH",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://nexus.js-soft.com/repository/npm-private/"
