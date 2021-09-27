@@ -3151,7 +3151,12 @@
       }
       window.clearInterval(WebQR.timer);
       window.clearTimeout(WebQR.timeOut);
-      WebQR.stream.getTracks()[0].stop();
+      try {
+        // Fails if no camera was detected
+        WebQR.stream.getTracks()[0].stop();
+      } catch (err) {
+        console.warn("WARN :::: ", err);
+      }
       WebQR.container.style.display = "none";
       WebQR.lockLayer.style.display = "none";
       WebQR.ctx.clearRect(0, 0, 640, 600);
@@ -3199,6 +3204,10 @@
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices
         .getUserMedia({ video: true })
+        .catch((err) => {
+          // Catches error if no camera is available
+          console.error("ERR :::: ", err);
+        })
         .then(function (stream) {
           WebQR.video.srcObject = stream; // window.URL.createObjectURL(stream);
           WebQR.video.play();

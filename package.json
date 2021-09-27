@@ -1,6 +1,6 @@
 {
   "name": "@jss/qr-code-scanner",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
   "main": "index.js",
   "files": [
