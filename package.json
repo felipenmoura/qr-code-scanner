@@ -1,14 +1,7 @@
 {
-  "name": "@jss/qr-code-scanner",
+  "name": "@js-soft/qr-code-scanner",
   "version": "1.0.19",
   "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "index.html",
-    "scripts/scanner.js"
-  ],
-  "repository": "github.com:js-soft/qr-code-scanner",
   "keywords": [
     "qrcode",
     "qr-code",
@@ -18,10 +11,17 @@
     "camera",
     "video"
   ],
-  "scripts": {},
-  "author": "j&s-soft GmbH",
+  "repository": "github.com:js-soft/qr-code-scanner",
   "license": "MIT",
+  "author": "j&s-soft GmbH",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.html",
+    "scripts/scanner.js"
+  ],
+  "scripts": {},
   "publishConfig": {
-    "registry": "https://nexus.js-soft.com/repository/npm-private/"
+    "access": "public"
   }
 }
