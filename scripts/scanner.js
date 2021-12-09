@@ -3143,7 +3143,7 @@
       return;
     }
 
-    function close(result) {
+    async function close(result) {
       if (options.match) {
         if (result && !result.match(options.match)) {
           return;
@@ -3154,9 +3154,12 @@
       try {
         // Fails if no camera was detected
         // If QR scanner is closed too quickly, the stream is not closed => add timeout
-        setTimeout(() => {
-          WebQR.stream.getTracks()[0].stop();
-        }, 500);
+        await new Promise((resolve) => {
+          setTimeout(() => {
+            WebQR.stream.getTracks()[0].stop();
+            resolve();
+          }, 500);
+        });
       } catch (err) {
         console.warn("WARN :::: ", err);
       }
@@ -3164,11 +3167,10 @@
       WebQR.lockLayer.style.display = "none";
       WebQR.ctx.clearRect(0, 0, 640, 600);
 
-      if (result === false) {
-        return;
-      }
       if (result) {
         options.onResult(result);
+      } else {
+        return;
       }
     }
 
@@ -3185,14 +3187,18 @@
         WebQR.ctx.drawImage(image, 0, 0, 640, 600);
       };
 
-      WebQR.qrcode.callback = function (result) {
-        close(result);
+      WebQR.qrcode.callback = async function (result) {
+        await close(result);
       };
 
       initiated = true;
-      document.body.addEventListener("keyup", (event) => {
+      document.body.addEventListener("keyup", async (event) => {
         if (event.keyCode === 27) {
-          close();
+          options.onError({
+            code: "SCAN_CANCELLED",
+            err: "User pressed Escape and cancelled scan",
+          });
+          await close();
         }
       });
     } else {
@@ -3200,8 +3206,12 @@
       WebQR.lockLayer.style.display = "block";
     }
 
-    WebQR.lockLayer.onclick = (event) => {
-      close();
+    WebQR.lockLayer.onclick = async (event) => {
+      options.onError({
+        code: "SCAN_CANCELLED",
+        err: "User clicked mouse and cancelled scan",
+      });
+      await close();
     };
 
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
