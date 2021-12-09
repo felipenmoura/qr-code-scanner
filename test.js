@@ -1,3 +1,3 @@
-import QRScanner from 'index.js'
+import QRScanner from "index.js";
 
-console.log(typeof QRScanner)
+console.log(typeof QRScanner);
