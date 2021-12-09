@@ -3001,6 +3001,16 @@
             return;
         }
 
+        async function handleEscapeButtonPress(event) {
+            if (event.keyCode === 27) {
+                options.onError({
+                    code: "SCAN_CANCELLED",
+                    err: "User pressed Escape and cancelled scan"
+                });
+                await close();
+            }
+        }
+
         async function close(result) {
             if (options.match) {
                 if (result && !result.match(options.match)) {
@@ -3024,6 +3034,7 @@
             WebQR.container.style.display = "none";
             WebQR.lockLayer.style.display = "none";
             WebQR.ctx.clearRect(0, 0, 640, 600);
+            document.body.removeEventListener("keyup", handleEscapeButtonPress);
 
             if (result) {
                 options.onResult(result);
@@ -3050,15 +3061,8 @@
             };
 
             initiated = true;
-            document.body.addEventListener("keyup", async (event) => {
-                if (event.keyCode === 27) {
-                    options.onError({
-                        code: "SCAN_CANCELLED",
-                        err: "User pressed Escape and cancelled scan"
-                    });
-                    await close();
-                }
-            });
+
+            document.body.addEventListener("keyup", handleEscapeButtonPress);
         } else {
             WebQR.container.style.display = "block";
             WebQR.lockLayer.style.display = "block";
