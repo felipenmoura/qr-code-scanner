@@ -1,3 +1,3 @@
-const QRScanner = require('./scripts/scanner.js')
+const QRScanner = require("./scripts/scanner.js");
 //export default QRScanner
-module.exports = QRScanner
+module.exports = QRScanner;
