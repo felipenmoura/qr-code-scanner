@@ -3153,7 +3153,9 @@
       window.clearTimeout(WebQR.timeOut);
       try {
         // Fails if no camera was detected
-        WebQR.stream.getTracks()[0].stop();
+        setTimeout(() => {
+          WebQR.stream.getTracks()[0].stop();
+        }, 500);
       } catch (err) {
         console.warn("WARN :::: ", err);
       }
