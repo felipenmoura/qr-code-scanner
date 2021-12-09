@@ -3153,6 +3153,7 @@
       window.clearTimeout(WebQR.timeOut);
       try {
         // Fails if no camera was detected
+        // If QR scanner is closed too quickly, the stream is not closed => add timeout
         setTimeout(() => {
           WebQR.stream.getTracks()[0].stop();
         }, 500);
