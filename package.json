@@ -1,27 +1,30 @@
 {
-  "name": "@js-soft/qr-code-scanner",
-  "version": "1.0.21",
-  "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
-  "keywords": [
-    "qrcode",
-    "qr-code",
-    "scanner",
-    "reader",
-    "decoder",
-    "camera",
-    "video"
-  ],
-  "repository": "github.com:js-soft/qr-code-scanner",
-  "license": "MIT",
-  "author": "j&s-soft GmbH",
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "index.html",
-    "scripts/scanner.js"
-  ],
-  "scripts": {},
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "@js-soft/qr-code-scanner",
+    "version": "1.0.21",
+    "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
+    "keywords": [
+        "qrcode",
+        "qr-code",
+        "scanner",
+        "reader",
+        "decoder",
+        "camera",
+        "video"
+    ],
+    "repository": "github.com:js-soft/qr-code-scanner",
+    "license": "MIT",
+    "author": "j&s-soft GmbH",
+    "main": "index.js",
+    "files": [
+        "index.js",
+        "index.html",
+        "scripts/scanner.js"
+    ],
+    "scripts": {},
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "prettier": "^2.5.1"
+    }
 }
