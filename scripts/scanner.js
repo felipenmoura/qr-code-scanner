@@ -2931,8 +2931,10 @@
         let lockLayer = document.createElement("div");
         lockLayer.className = "QRScanner-lock-layer " + options.lockLayerClassName;
         container.className = "QRScanner-container " + options.className;
-        let innerHTML = '<canvas id="QRScanner-canvasEl" width="640px" height="600px"></canvas>';
+        let innerHTML = '<canvas id="QRScanner-canvasEl" width="640px" height="610px"></canvas>';
         innerHTML += '<video id="QRScanner-videoEl" style="display: none;" width="600px" height="600px"></video>';
+        innerHTML +=
+            '<div id="qr-scanner-input-container"> <label for="qr-scanner-text-input"> QR-Content <input id="qr-scanner-text-input" /> </label> <input id="qr-scanner-text-input-button" type="submit" value="submit" onclick="QRScannerTextHandler()"/> </div>';
         container.innerHTML = innerHTML;
         lockLayer.innerHTML = ".......";
 
@@ -2952,6 +2954,16 @@
             display: block;
             background-color: ${options.bgColor || "#f0f0f0"};
             box-shadow: ${options.shadow || "0px 0px 10px #000"}
+        `
+        );
+        addCSSRule(
+            "#qr-scanner-input-container",
+            `text.align: center;
+            background-color: white;
+            padding: 2px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
         `
         );
         addCSSRule(
@@ -3004,7 +3016,7 @@
         async function handleEscapeButtonPress(event) {
             if (event.keyCode === 27) {
                 options.onError({
-                    code: "SCAN_CANCELLED",
+                    code: "SCANNER_CANCELLED",
                     err: "User pressed Escape and cancelled scan"
                 });
                 await close();
@@ -3047,6 +3059,13 @@
 
         document.body.addEventListener("keyup", handleEscapeButtonPress);
 
+        window.QRScannerTextHandler = () => {
+            const input = document.getElementById("qr-scanner-text-input");
+            const data = input.value;
+            input.value = "";
+            close(data);
+        };
+
         if (!initiated) {
             QRCodeDecoder(WebQR);
             createGlobalComponent(options);
@@ -3070,7 +3089,7 @@
 
         WebQR.lockLayer.onclick = async (event) => {
             options.onError({
-                code: "SCAN_CANCELLED",
+                code: "SCANNER_CANCELLED",
                 err: "User clicked mouse and cancelled scan"
             });
             await close();
@@ -3097,7 +3116,10 @@
                         }
                     }, 200);
                     WebQR.timeOut = window.setTimeout(function () {
-                        options.onTimeout();
+                        options.onTimeout({
+                            code: "SCANNER_TIMEOUT",
+                            err: "Scanner closed automatically due to a timeout"
+                        });
                         close(false);
                     }, options.timeout || 20000);
                 });
