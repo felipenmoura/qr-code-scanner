@@ -3045,6 +3045,8 @@
 
         window.clearInterval(WebQR.timer);
 
+        document.body.addEventListener("keyup", handleEscapeButtonPress);
+
         if (!initiated) {
             QRCodeDecoder(WebQR);
             createGlobalComponent(options);
@@ -3061,8 +3063,6 @@
             };
 
             initiated = true;
-
-            document.body.addEventListener("keyup", handleEscapeButtonPress);
         } else {
             WebQR.container.style.display = "block";
             WebQR.lockLayer.style.display = "block";

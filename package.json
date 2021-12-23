@@ -1,6 +1,6 @@
 {
     "name": "@js-soft/qr-code-scanner",
-    "version": "1.0.21",
+    "version": "1.0.22",
     "description": "A SIMPLE qr-code scanner, that works and is simple to use. It will open the camera and wait for a match.",
     "keywords": [
         "qrcode",
