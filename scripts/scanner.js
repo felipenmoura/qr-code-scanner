@@ -3083,6 +3083,10 @@
 
             initiated = true;
         } else {
+            // Overwrite callback function to catch current closure (options)
+            WebQR.qrcode.callback = async function (result) {
+                await close(result);
+            };
             WebQR.container.style.display = "block";
             WebQR.lockLayer.style.display = "block";
         }
