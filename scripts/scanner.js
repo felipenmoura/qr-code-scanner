@@ -120,7 +120,9 @@
             }
             window.clearInterval(WebQR.timer)
             window.clearTimeout(WebQR.timeOut)
-            WebQR.stream.getTracks()[0].stop()
+            if(WebQR.stream){
+                WebQR.stream.getTracks()[0].stop();
+            }
             WebQR.container.style.display = 'none'
             WebQR.lockLayer.style.display = 'none'
             WebQR.ctx.clearRect(0, 0, 240, 200)
@@ -143,7 +145,7 @@
             WebQR.ctx = WebQR.canvas.getContext('2d')
 
             WebQR.draw = function (image) {
-                WebQR.ctx.drawImage(image, 0, 0, 240, 200); 
+                WebQR.ctx.drawImage(image, 0, 0, 240, 200);
             }
 
             WebQR.qrcode.callback = function (result) {
@@ -181,6 +183,10 @@
                     options.onTimeout()
                     close(false)
                 }, options.timeout || 20000)
+            }).catch(e =>{
+                // remove the canvas
+                close(false);
+                options.onError(e);
             });
         }
     }
